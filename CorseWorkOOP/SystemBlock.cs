@@ -34,32 +34,32 @@ namespace CorseWorkOOP
 
         public string ProcessorType
         {
-            get { return processorType; }
-            set { processorType = value; }
+            get => processorType;
+            set => processorType = value;
         }
 
         public int ClockSpeed
         {
-            get { return clockSpeed; }
-            set { clockSpeed = value; }
+            get => clockSpeed;
+            set => clockSpeed = value;
         }
 
         public int HardDriveCapacity
         {
-            get { return hardDriveCapacity; }
-            set { hardDriveCapacity = value; }
+            get => hardDriveCapacity;
+            set => hardDriveCapacity = value;
         }
 
         public bool HasCdDrive
         {
-            get { return hasCdDrive; }
-            set { hasCdDrive = value; }
+            get => hasCdDrive;
+            set => hasCdDrive = value;
         }
 
         public double Price
         {
-            get { return price; }
-            set { price = value; }
+            get => price;
+            set => price = value;
         }
     }
 }

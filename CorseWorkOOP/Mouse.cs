@@ -28,20 +28,20 @@ namespace CorseWorkOOP
 
         public string MouseType
         {
-            get { return mouseType; }
-            set { mouseType = value; }
+            get => mouseType;
+            set => mouseType = value;
         }
 
         public int ButtonCount
         {
-            get { return buttonCount; }
-            set { buttonCount = value; }
+            get => buttonCount;
+            set => buttonCount = value;
         }
 
         public double Price
         {
-            get { return price; }
-            set { price = value; }
+            get => price;
+            set => price = value;
         }
     }
 }

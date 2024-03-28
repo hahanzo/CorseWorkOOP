@@ -28,20 +28,20 @@ namespace CorseWorkOOP
 
         public string KeyboardType
         {
-            get { return keyboardType; }
-            set { keyboardType = value; }
+            get => keyboardType;
+            set => keyboardType = value;
         }
 
         public int KeyCount
         {
-            get { return keyCount; }
-            set { keyCount = value; }
+            get => keyCount;
+            set => keyCount = value;
         }
 
         public double Price
         {
-            get { return price; }
-            set { price = value; }
+            get => price;
+            set => price = value;
         }
     }
 }

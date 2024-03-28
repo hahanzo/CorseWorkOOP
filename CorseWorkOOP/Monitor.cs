@@ -28,20 +28,20 @@ namespace CorseWorkOOP
 
         public double ScreenSize
         {
-            get { return screenSize; }
-            set { screenSize = value; }
+            get => screenSize;
+            set => screenSize = value;
         }
 
         public string Resolution
         {
-            get { return resolution; }
-            set { resolution = value; }
+            get => resolution;
+            set => resolution = value;
         }
 
         public double Price
         {
-            get { return price; }
-            set { price = value; }
+            get => price;
+            set => price = value;
         }
     }
 }
