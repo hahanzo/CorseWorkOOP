@@ -64,10 +64,16 @@
             ScreenSizeTextBox = new TextBox();
             ResolutionTextBox = new TextBox();
             tabPage2 = new TabPage();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            groupBox4 = new GroupBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -83,30 +89,15 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox4);
+            tabPage1.Controls.Add(groupBox3);
+            tabPage1.Controls.Add(groupBox2);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(computerDataGridView);
             tabPage1.Controls.Add(ClearListButton);
             tabPage1.Controls.Add(TotalPriceButton);
             tabPage1.Controls.Add(AddComputerButton);
-            tabPage1.Controls.Add(label14);
-            tabPage1.Controls.Add(label13);
-            tabPage1.Controls.Add(label12);
-            tabPage1.Controls.Add(label11);
-            tabPage1.Controls.Add(label10);
-            tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(groupBox1);
-            tabPage1.Controls.Add(MousePriceTextBox);
-            tabPage1.Controls.Add(ButtonCountTextBox);
-            tabPage1.Controls.Add(MouseTypeTextBox);
-            tabPage1.Controls.Add(KeyboardPriceTextBox);
-            tabPage1.Controls.Add(KeyCountTextBox);
-            tabPage1.Controls.Add(KeyboardTypeTextBox);
-            tabPage1.Controls.Add(MonitorPriceTextBox);
-            tabPage1.Controls.Add(ScreenSizeTextBox);
-            tabPage1.Controls.Add(ResolutionTextBox);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -168,7 +159,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(138, 584);
+            label14.Location = new Point(126, 108);
             label14.Name = "label14";
             label14.Size = new Size(35, 15);
             label14.TabIndex = 21;
@@ -177,7 +168,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(70, 541);
+            label13.Location = new Point(58, 65);
             label13.Name = "label13";
             label13.Size = new Size(102, 15);
             label13.TabIndex = 20;
@@ -186,7 +177,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(110, 501);
+            label12.Location = new Point(98, 25);
             label12.Name = "label12";
             label12.Size = new Size(63, 15);
             label12.TabIndex = 19;
@@ -195,7 +186,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(137, 461);
+            label11.Location = new Point(125, 108);
             label11.Name = "label11";
             label11.Size = new Size(35, 15);
             label11.TabIndex = 18;
@@ -204,7 +195,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(69, 420);
+            label10.Location = new Point(57, 67);
             label10.Name = "label10";
             label10.Size = new Size(101, 15);
             label10.TabIndex = 17;
@@ -213,7 +204,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(80, 378);
+            label9.Location = new Point(68, 25);
             label9.Name = "label9";
             label9.Size = new Size(92, 15);
             label9.TabIndex = 13;
@@ -222,7 +213,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(138, 332);
+            label8.Location = new Point(126, 101);
             label8.Name = "label8";
             label8.Size = new Size(35, 15);
             label8.TabIndex = 13;
@@ -231,7 +222,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(57, 296);
+            label7.Location = new Point(45, 65);
             label7.Name = "label7";
             label7.Size = new Size(116, 15);
             label7.TabIndex = 16;
@@ -240,7 +231,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(108, 256);
+            label6.Location = new Point(96, 25);
             label6.Name = "label6";
             label6.Size = new Size(65, 15);
             label6.TabIndex = 13;
@@ -340,65 +331,65 @@
             // 
             // MousePriceTextBox
             // 
-            MousePriceTextBox.Location = new Point(179, 581);
+            MousePriceTextBox.Location = new Point(167, 105);
             MousePriceTextBox.Name = "MousePriceTextBox";
-            MousePriceTextBox.Size = new Size(100, 23);
+            MousePriceTextBox.Size = new Size(154, 23);
             MousePriceTextBox.TabIndex = 14;
             // 
             // ButtonCountTextBox
             // 
-            ButtonCountTextBox.Location = new Point(179, 538);
+            ButtonCountTextBox.Location = new Point(167, 62);
             ButtonCountTextBox.Name = "ButtonCountTextBox";
-            ButtonCountTextBox.Size = new Size(100, 23);
+            ButtonCountTextBox.Size = new Size(154, 23);
             ButtonCountTextBox.TabIndex = 13;
             // 
             // MouseTypeTextBox
             // 
-            MouseTypeTextBox.Location = new Point(179, 498);
+            MouseTypeTextBox.Location = new Point(167, 22);
             MouseTypeTextBox.Name = "MouseTypeTextBox";
-            MouseTypeTextBox.Size = new Size(100, 23);
+            MouseTypeTextBox.Size = new Size(154, 23);
             MouseTypeTextBox.TabIndex = 12;
             // 
             // KeyboardPriceTextBox
             // 
-            KeyboardPriceTextBox.Location = new Point(179, 458);
+            KeyboardPriceTextBox.Location = new Point(167, 105);
             KeyboardPriceTextBox.Name = "KeyboardPriceTextBox";
-            KeyboardPriceTextBox.Size = new Size(100, 23);
+            KeyboardPriceTextBox.Size = new Size(154, 23);
             KeyboardPriceTextBox.TabIndex = 11;
             // 
             // KeyCountTextBox
             // 
-            KeyCountTextBox.Location = new Point(179, 417);
+            KeyCountTextBox.Location = new Point(167, 64);
             KeyCountTextBox.Name = "KeyCountTextBox";
-            KeyCountTextBox.Size = new Size(100, 23);
+            KeyCountTextBox.Size = new Size(154, 23);
             KeyCountTextBox.TabIndex = 10;
             // 
             // KeyboardTypeTextBox
             // 
-            KeyboardTypeTextBox.Location = new Point(179, 375);
+            KeyboardTypeTextBox.Location = new Point(167, 22);
             KeyboardTypeTextBox.Name = "KeyboardTypeTextBox";
-            KeyboardTypeTextBox.Size = new Size(100, 23);
+            KeyboardTypeTextBox.Size = new Size(154, 23);
             KeyboardTypeTextBox.TabIndex = 9;
             // 
             // MonitorPriceTextBox
             // 
-            MonitorPriceTextBox.Location = new Point(179, 332);
+            MonitorPriceTextBox.Location = new Point(167, 101);
             MonitorPriceTextBox.Name = "MonitorPriceTextBox";
-            MonitorPriceTextBox.Size = new Size(100, 23);
+            MonitorPriceTextBox.Size = new Size(154, 23);
             MonitorPriceTextBox.TabIndex = 8;
             // 
             // ScreenSizeTextBox
             // 
-            ScreenSizeTextBox.Location = new Point(179, 253);
+            ScreenSizeTextBox.Location = new Point(167, 22);
             ScreenSizeTextBox.Name = "ScreenSizeTextBox";
-            ScreenSizeTextBox.Size = new Size(100, 23);
+            ScreenSizeTextBox.Size = new Size(154, 23);
             ScreenSizeTextBox.TabIndex = 6;
             // 
             // ResolutionTextBox
             // 
-            ResolutionTextBox.Location = new Point(179, 293);
+            ResolutionTextBox.Location = new Point(167, 62);
             ResolutionTextBox.Name = "ResolutionTextBox";
-            ResolutionTextBox.Size = new Size(100, 23);
+            ResolutionTextBox.Size = new Size(154, 23);
             ResolutionTextBox.TabIndex = 7;
             // 
             // tabPage2
@@ -411,6 +402,51 @@
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(MonitorPriceTextBox);
+            groupBox2.Controls.Add(ResolutionTextBox);
+            groupBox2.Controls.Add(ScreenSizeTextBox);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Location = new Point(12, 238);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(334, 131);
+            groupBox2.TabIndex = 27;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Монітор";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(KeyboardTypeTextBox);
+            groupBox3.Controls.Add(KeyCountTextBox);
+            groupBox3.Controls.Add(KeyboardPriceTextBox);
+            groupBox3.Controls.Add(label9);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Controls.Add(label11);
+            groupBox3.Location = new Point(12, 375);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(334, 137);
+            groupBox3.TabIndex = 28;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Клавіатура";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(MouseTypeTextBox);
+            groupBox4.Controls.Add(ButtonCountTextBox);
+            groupBox4.Controls.Add(MousePriceTextBox);
+            groupBox4.Controls.Add(label12);
+            groupBox4.Controls.Add(label13);
+            groupBox4.Controls.Add(label14);
+            groupBox4.Location = new Point(12, 518);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(334, 137);
+            groupBox4.TabIndex = 29;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Миша";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -422,10 +458,15 @@
             WindowState = FormWindowState.Maximized;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -467,5 +508,8 @@
         private CheckBox HasCdDriveCheckBox;
         private DataGridView computerDataGridView;
         private Button button1;
+        private GroupBox groupBox4;
+        private GroupBox groupBox3;
+        private GroupBox groupBox2;
     }
 }

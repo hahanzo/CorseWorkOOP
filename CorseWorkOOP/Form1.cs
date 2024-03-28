@@ -145,7 +145,7 @@ namespace CorseWorkOOP
             }
 
             // Створюємо об'єкт комп'ютера з введеними даними
-            Computer computer = new Computer
+            Computer computer = new Computer()
             {
                 SystemBlock = new SystemBlock
                 {
@@ -184,29 +184,33 @@ namespace CorseWorkOOP
 
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
-            // Перевірка, чи існує вибраний рядок
-            if (computerDataGridView.SelectedRows.Count > 0)
+            // Отримання поточного рядка, на якому знаходиться фокус
+            int rowIndex = computerDataGridView.CurrentCell.RowIndex;
+
+            // Перевірка, чи знаходиться фокус на коректному рядку
+            if (rowIndex >= 0)
             {
-                // Отримання індексу виділеного рядка
-                int selectedIndex = computerDataGridView.SelectedRows[0].Index;
+                // Отримання об'єкта Computer зі списку за вказаним індексом
+                Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
 
-                // Отримання комп'ютера з відповідного рядка
-                Computer selectedComputer = computerDataGridView.Rows[selectedIndex].DataBoundItem as Computer;
-
-                // Перевірка, чи вдалося отримати комп'ютер
+                // Перевірка, чи вдалося отримати об'єкт Computer
                 if (selectedComputer != null)
                 {
-                    // Виведення ціни комп'ютера у MessageBox
+                    // Виведення ціни обраного комп'ютера у MessageBox
                     MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Виведення повідомлення про помилку, якщо індекс виходить за межі списку
+                    MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                // Виведення повідомлення, якщо жоден рядок не вибрано
-                MessageBox.Show("Будь ласка, виберіть комп'ютер для перегляду ціни.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Виведення повідомлення, якщо неможливо визначити поточний рядок
+                MessageBox.Show("Неможливо визначити обраний рядок.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void TotalPriceButton_Click(object sender, EventArgs e)
         {
