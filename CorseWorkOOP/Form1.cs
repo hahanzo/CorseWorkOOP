@@ -8,6 +8,7 @@ namespace CorseWorkOOP
         {
             InitializeComponent();
             InitializeDataGridView();
+            
             computerClassroom = new ComputerClassroom();
 
             ProcessorTypeTextBox.Text = " Intel Core i5-9400F";
@@ -184,33 +185,43 @@ namespace CorseWorkOOP
 
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
-            // Отримання поточного рядка, на якому знаходиться фокус
-            int rowIndex = computerDataGridView.CurrentCell.RowIndex;
-
-            // Перевірка, чи знаходиться фокус на коректному рядку
-            if (rowIndex >= 0)
+            // Перевірка, чи є хоча б один рядок в DataGridView
+            if (computerDataGridView.RowCount > 0)
             {
-                // Отримання об'єкта Computer зі списку за вказаним індексом
-                Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
+                // Отримання поточного рядка, на якому знаходиться фокус
+                int rowIndex = computerDataGridView.CurrentCell?.RowIndex ?? -1;
 
-                // Перевірка, чи вдалося отримати об'єкт Computer
-                if (selectedComputer != null)
+                // Перевірка, чи знаходиться фокус на коректному рядку
+                if (rowIndex >= 0)
                 {
-                    // Виведення ціни обраного комп'ютера у MessageBox
-                    MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Отримання об'єкта Computer зі списку за вказаним індексом
+                    Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
+
+                    // Перевірка, чи вдалося отримати об'єкт Computer
+                    if (selectedComputer != null)
+                    {
+                        // Виведення ціни обраного комп'ютера у MessageBox
+                        MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Виведення повідомлення про помилку, якщо індекс виходить за межі списку
+                        MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    // Виведення повідомлення про помилку, якщо індекс виходить за межі списку
-                    MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Виведення повідомлення, якщо неможливо визначити поточний рядок
+                    MessageBox.Show("Неможливо визначити обраний рядок.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                // Виведення повідомлення, якщо неможливо визначити поточний рядок
-                MessageBox.Show("Неможливо визначити обраний рядок.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Виведення повідомлення, якщо в DataGridView немає жодного рядка
+                MessageBox.Show("Неможливо визначити обраний рядок. Дані відсутні.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void TotalPriceButton_Click(object sender, EventArgs e)
         {
