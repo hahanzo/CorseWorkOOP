@@ -32,7 +32,7 @@ namespace CorseWorkOOP
 
         private void AddComputerButton_Click(object sender, EventArgs e)
         {
-            // Перевірки для текстових значень
+            // Checks for text values
             if (string.IsNullOrWhiteSpace(ProcessorTypeTextBox.Text))
             {
                 MessageBox.Show("Будь ласка, введіть тип процесора.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -57,7 +57,7 @@ namespace CorseWorkOOP
                 return;
             }
 
-            // Перевірки для числових значень
+            // Checks for numerical values
             double screenSize, systemBlockPrice, monitorPrice, keyboardPrice, mousePrice;
             int keyCount, buttonCount;
 
@@ -145,7 +145,7 @@ namespace CorseWorkOOP
                 return;
             }
 
-            // Створюємо об'єкт комп'ютера з введеними даними
+            // Create a computer object with the entered data
             Computer computer = new Computer()
             {
                 SystemBlock = new SystemBlock
@@ -176,48 +176,44 @@ namespace CorseWorkOOP
                 }
             };
 
-            // Додаємо комп'ютер до списку
+            // Add the computer to the list
             computerClassroom.AddComputer(computer);
 
-            // Оновлюємо список комп'ютерів на формі
+            // Update the computer list on the form
             UpdateComputerList();
         }
 
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
-            // Перевірка, чи є хоча б один рядок в DataGridView
+            // Check if there is at least one row in DataGridView
             if (computerDataGridView.RowCount > 0)
             {
-                // Отримання поточного рядка, на якому знаходиться фокус
+                // Get the current row where the focus is
                 int rowIndex = computerDataGridView.CurrentCell?.RowIndex ?? -1;
 
-                // Перевірка, чи знаходиться фокус на коректному рядку
+                // Check if the focus is on a correct row
                 if (rowIndex >= 0)
                 {
-                    // Отримання об'єкта Computer зі списку за вказаним індексом
+                    // Get the Computer object from the list at the specified index
                     Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
 
-                    // Перевірка, чи вдалося отримати об'єкт Computer
+                    // Check if successfully retrieved a Computer object
                     if (selectedComputer != null)
                     {
-                        // Виведення ціни обраного комп'ютера у MessageBox
                         MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        // Виведення повідомлення про помилку, якщо індекс виходить за межі списку
                         MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    // Виведення повідомлення, якщо неможливо визначити поточний рядок
                     MessageBox.Show("Неможливо визначити обраний рядок.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                // Виведення повідомлення, якщо в DataGridView немає жодного рядка
                 MessageBox.Show("Неможливо визначити обраний рядок. Дані відсутні.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -225,19 +221,17 @@ namespace CorseWorkOOP
 
         private void TotalPriceButton_Click(object sender, EventArgs e)
         {
-            // Виведення загальної ціни у MessageBox
             MessageBox.Show($"Total Price: ${computerClassroom.CalculateTotalPrice()}", "Total Price", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
         private void ClearListButton_Click(object sender, EventArgs e)
         {
-            // Очищаємо список комп'ютерів
             computerClassroom = new ComputerClassroom();
             UpdateComputerList();
         }
 
-        // Додавання колонок до DataGridView
+        // Add columns to the DataGridView
         private void InitializeDataGridView()
         {
             computerDataGridView.Columns.Add("ProcessorTypeColumn", "Processor Type");
@@ -256,16 +250,13 @@ namespace CorseWorkOOP
             computerDataGridView.Columns.Add("MousePriceColumn", "Mouse Price");
         }
 
-        // Оновлення списку комп'ютерів на формі
+        // Update the list of computers on the form
         private void UpdateComputerList()
         {
-            // Очищення даних у DataGridView
             computerDataGridView.Rows.Clear();
 
-            // Додавання кожного комп'ютера до DataGridView
             foreach (var computer in computerClassroom)
             {
-                // Додавання рядка з даними про комп'ютер у DataGridView
                 int rowIndex = computerDataGridView.Rows.Add(
                     computer.SystemBlock.ProcessorType,
                     computer.SystemBlock.ClockSpeed,
