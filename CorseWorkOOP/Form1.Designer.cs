@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
             groupBox4 = new GroupBox();
             MouseTypeTextBox = new TextBox();
             ButtonCountTextBox = new TextBox();
@@ -51,7 +49,7 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            button1 = new Button();
+            ShowComputerPriceButton = new Button();
             computerDataGridView = new DataGridView();
             ClearListButton = new Button();
             TotalPriceButton = new Button();
@@ -66,81 +64,14 @@
             ClockSpeedTextBox = new TextBox();
             SystemBlockPriceTextBox = new TextBox();
             HardDriveCapacityTextBox = new TextBox();
-            tabPage2 = new TabPage();
-            groupBox8 = new GroupBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            label24 = new Label();
-            label25 = new Label();
-            label26 = new Label();
-            groupBox7 = new GroupBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            groupBox6 = new GroupBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            groupBox5 = new GroupBox();
-            checkBox1 = new CheckBox();
-            label3 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            SerializeButton = new Button();
+            DeserialzeButton = new Button();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).BeginInit();
             groupBox1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            groupBox8.SuspendLayout();
-            groupBox7.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox5.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 12);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1367, 704);
-            tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            tabPage1.BackColor = Color.White;
-            tabPage1.Controls.Add(groupBox4);
-            tabPage1.Controls.Add(groupBox3);
-            tabPage1.Controls.Add(groupBox2);
-            tabPage1.Controls.Add(button1);
-            tabPage1.Controls.Add(computerDataGridView);
-            tabPage1.Controls.Add(ClearListButton);
-            tabPage1.Controls.Add(TotalPriceButton);
-            tabPage1.Controls.Add(AddComputerButton);
-            tabPage1.Controls.Add(groupBox1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1359, 676);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
             // 
             // groupBox4
             // 
@@ -150,10 +81,10 @@
             groupBox4.Controls.Add(label12);
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(label14);
-            groupBox4.Location = new Point(12, 518);
+            groupBox4.Location = new Point(34, 552);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(334, 137);
-            groupBox4.TabIndex = 29;
+            groupBox4.TabIndex = 38;
             groupBox4.TabStop = false;
             groupBox4.Text = "Миша";
             // 
@@ -213,10 +144,10 @@
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label11);
-            groupBox3.Location = new Point(12, 375);
+            groupBox3.Location = new Point(34, 409);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(334, 137);
-            groupBox3.TabIndex = 28;
+            groupBox3.TabIndex = 37;
             groupBox3.TabStop = false;
             groupBox3.Text = "Клавіатура";
             // 
@@ -276,10 +207,10 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(12, 238);
+            groupBox2.Location = new Point(34, 272);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(334, 131);
-            groupBox2.TabIndex = 27;
+            groupBox2.TabIndex = 36;
             groupBox2.TabStop = false;
             groupBox2.Text = "Монітор";
             // 
@@ -331,52 +262,52 @@
             label8.TabIndex = 13;
             label8.Text = "Ціна:";
             // 
-            // button1
+            // ShowComputerPriceButton
             // 
-            button1.Location = new Point(660, 605);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 49);
-            button1.TabIndex = 26;
-            button1.Text = "Ціна комп'ютера";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += ShowComputerPriceButton_Click;
+            ShowComputerPriceButton.Location = new Point(585, 640);
+            ShowComputerPriceButton.Name = "ShowComputerPriceButton";
+            ShowComputerPriceButton.Size = new Size(159, 49);
+            ShowComputerPriceButton.TabIndex = 35;
+            ShowComputerPriceButton.Text = "Ціна комп'ютера";
+            ShowComputerPriceButton.UseVisualStyleBackColor = true;
+            ShowComputerPriceButton.Click += ShowComputerPriceButton_Click;
             // 
             // computerDataGridView
             // 
             computerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             computerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            computerDataGridView.Location = new Point(398, 6);
+            computerDataGridView.Location = new Point(420, 40);
             computerDataGridView.Name = "computerDataGridView";
             computerDataGridView.RowTemplate.Height = 25;
-            computerDataGridView.Size = new Size(937, 593);
-            computerDataGridView.TabIndex = 25;
+            computerDataGridView.Size = new Size(984, 593);
+            computerDataGridView.TabIndex = 34;
             // 
             // ClearListButton
             // 
-            ClearListButton.Location = new Point(1176, 605);
+            ClearListButton.Location = new Point(915, 640);
             ClearListButton.Name = "ClearListButton";
             ClearListButton.Size = new Size(159, 49);
-            ClearListButton.TabIndex = 24;
+            ClearListButton.TabIndex = 33;
             ClearListButton.Text = "Очистити список";
             ClearListButton.UseVisualStyleBackColor = true;
             ClearListButton.Click += ClearListButton_Click;
             // 
             // TotalPriceButton
             // 
-            TotalPriceButton.Location = new Point(916, 605);
+            TotalPriceButton.Location = new Point(750, 640);
             TotalPriceButton.Name = "TotalPriceButton";
             TotalPriceButton.Size = new Size(159, 49);
-            TotalPriceButton.TabIndex = 23;
+            TotalPriceButton.TabIndex = 32;
             TotalPriceButton.Text = "Загальна ціна";
             TotalPriceButton.UseVisualStyleBackColor = true;
             TotalPriceButton.Click += TotalPriceButton_Click;
             // 
             // AddComputerButton
             // 
-            AddComputerButton.Location = new Point(398, 606);
+            AddComputerButton.Location = new Point(420, 640);
             AddComputerButton.Name = "AddComputerButton";
             AddComputerButton.Size = new Size(159, 49);
-            AddComputerButton.TabIndex = 22;
+            AddComputerButton.TabIndex = 31;
             AddComputerButton.Text = "Добавити компютер";
             AddComputerButton.UseVisualStyleBackColor = true;
             AddComputerButton.Click += AddComputerButton_Click;
@@ -392,10 +323,10 @@
             groupBox1.Controls.Add(ClockSpeedTextBox);
             groupBox1.Controls.Add(SystemBlockPriceTextBox);
             groupBox1.Controls.Add(HardDriveCapacityTextBox);
-            groupBox1.Location = new Point(12, 6);
+            groupBox1.Location = new Point(34, 40);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(334, 226);
-            groupBox1.TabIndex = 15;
+            groupBox1.TabIndex = 30;
             groupBox1.TabStop = false;
             groupBox1.Text = " Системний блок";
             // 
@@ -473,313 +404,44 @@
             HardDriveCapacityTextBox.Size = new Size(154, 23);
             HardDriveCapacityTextBox.TabIndex = 3;
             // 
-            // tabPage2
+            // SerializeButton
             // 
-            tabPage2.Controls.Add(groupBox8);
-            tabPage2.Controls.Add(groupBox7);
-            tabPage2.Controls.Add(groupBox6);
-            tabPage2.Controls.Add(groupBox5);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1359, 676);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            SerializeButton.Location = new Point(1080, 640);
+            SerializeButton.Name = "SerializeButton";
+            SerializeButton.Size = new Size(159, 49);
+            SerializeButton.TabIndex = 39;
+            SerializeButton.Text = "Зберегти";
+            SerializeButton.UseVisualStyleBackColor = true;
             // 
-            // groupBox8
+            // DeserialzeButton
             // 
-            groupBox8.Controls.Add(textBox11);
-            groupBox8.Controls.Add(textBox12);
-            groupBox8.Controls.Add(textBox13);
-            groupBox8.Controls.Add(label24);
-            groupBox8.Controls.Add(label25);
-            groupBox8.Controls.Add(label26);
-            groupBox8.Location = new Point(6, 518);
-            groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(334, 137);
-            groupBox8.TabIndex = 30;
-            groupBox8.TabStop = false;
-            groupBox8.Text = "Миша";
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(167, 22);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(154, 23);
-            textBox11.TabIndex = 12;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(167, 62);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(154, 23);
-            textBox12.TabIndex = 13;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(167, 105);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(154, 23);
-            textBox13.TabIndex = 14;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(98, 25);
-            label24.Name = "label24";
-            label24.Size = new Size(63, 15);
-            label24.TabIndex = 19;
-            label24.Text = "Тип миші:";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(58, 65);
-            label25.Name = "label25";
-            label25.Size = new Size(102, 15);
-            label25.TabIndex = 20;
-            label25.Text = "Кількість кнопок:";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(126, 108);
-            label26.Name = "label26";
-            label26.Size = new Size(35, 15);
-            label26.TabIndex = 21;
-            label26.Text = "Ціна:";
-            // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(textBox8);
-            groupBox7.Controls.Add(textBox9);
-            groupBox7.Controls.Add(textBox10);
-            groupBox7.Controls.Add(label21);
-            groupBox7.Controls.Add(label22);
-            groupBox7.Controls.Add(label23);
-            groupBox7.Location = new Point(6, 375);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(334, 137);
-            groupBox7.TabIndex = 29;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Клавіатура";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(167, 22);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(154, 23);
-            textBox8.TabIndex = 9;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(167, 64);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(154, 23);
-            textBox9.TabIndex = 10;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(167, 105);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(154, 23);
-            textBox10.TabIndex = 11;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(68, 25);
-            label21.Name = "label21";
-            label21.Size = new Size(92, 15);
-            label21.TabIndex = 13;
-            label21.Text = "Тип клавіатури:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(57, 67);
-            label22.Name = "label22";
-            label22.Size = new Size(101, 15);
-            label22.TabIndex = 17;
-            label22.Text = "Кількість клавіш:";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(125, 108);
-            label23.Name = "label23";
-            label23.Size = new Size(35, 15);
-            label23.TabIndex = 18;
-            label23.Text = "Ціна:";
-            // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(textBox5);
-            groupBox6.Controls.Add(textBox6);
-            groupBox6.Controls.Add(textBox7);
-            groupBox6.Controls.Add(label18);
-            groupBox6.Controls.Add(label19);
-            groupBox6.Controls.Add(label20);
-            groupBox6.Location = new Point(6, 238);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(334, 131);
-            groupBox6.TabIndex = 28;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Монітор";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(167, 101);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(154, 23);
-            textBox5.TabIndex = 8;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(167, 62);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(154, 23);
-            textBox6.TabIndex = 7;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(167, 22);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(154, 23);
-            textBox7.TabIndex = 6;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(96, 25);
-            label18.Name = "label18";
-            label18.Size = new Size(65, 15);
-            label18.TabIndex = 13;
-            label18.Text = "Діагональ:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(45, 65);
-            label19.Name = "label19";
-            label19.Size = new Size(116, 15);
-            label19.TabIndex = 16;
-            label19.Text = "Роздільна здатність:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(126, 101);
-            label20.Name = "label20";
-            label20.Size = new Size(35, 15);
-            label20.TabIndex = 13;
-            label20.Text = "Ціна:";
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(checkBox1);
-            groupBox5.Controls.Add(label3);
-            groupBox5.Controls.Add(label15);
-            groupBox5.Controls.Add(label16);
-            groupBox5.Controls.Add(label17);
-            groupBox5.Controls.Add(textBox1);
-            groupBox5.Controls.Add(textBox2);
-            groupBox5.Controls.Add(textBox3);
-            groupBox5.Controls.Add(textBox4);
-            groupBox5.Location = new Point(6, 6);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(334, 226);
-            groupBox5.TabIndex = 16;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Системний блок";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(167, 152);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(148, 19);
-            checkBox1.TabIndex = 25;
-            checkBox1.Text = "Наявність СD приводу";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(76, 109);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 15);
-            label3.TabIndex = 12;
-            label3.Text = "Обє'м диску:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(119, 187);
-            label15.Name = "label15";
-            label15.Size = new Size(35, 15);
-            label15.TabIndex = 10;
-            label15.Text = "Ціна:";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(61, 64);
-            label16.Name = "label16";
-            label16.Size = new Size(97, 15);
-            label16.TabIndex = 8;
-            label16.Text = "Тактова частота:";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(61, 25);
-            label17.Name = "label17";
-            label17.Size = new Size(93, 15);
-            label17.TabIndex = 7;
-            label17.Text = "Тип процесора:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(167, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(154, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(167, 61);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(154, 23);
-            textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(167, 187);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(154, 23);
-            textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(167, 106);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(154, 23);
-            textBox4.TabIndex = 3;
+            DeserialzeButton.Location = new Point(1245, 640);
+            DeserialzeButton.Name = "DeserialzeButton";
+            DeserialzeButton.Size = new Size(159, 49);
+            DeserialzeButton.TabIndex = 40;
+            DeserialzeButton.Text = "Завантажити";
+            DeserialzeButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1391, 728);
-            Controls.Add(tabControl1);
+            ClientSize = new Size(1418, 728);
+            Controls.Add(DeserialzeButton);
+            Controls.Add(SerializeButton);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(ShowComputerPriceButton);
+            Controls.Add(computerDataGridView);
+            Controls.Add(ClearListButton);
+            Controls.Add(TotalPriceButton);
+            Controls.Add(AddComputerButton);
+            Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -789,89 +451,48 @@
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            groupBox8.ResumeLayout(false);
-            groupBox8.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private GroupBox groupBox1;
-        private TextBox ProcessorTypeTextBox;
-        private TextBox ClockSpeedTextBox;
-        private TextBox MousePriceTextBox;
-        private TextBox ButtonCountTextBox;
+        private GroupBox groupBox4;
         private TextBox MouseTypeTextBox;
-        private TextBox KeyboardPriceTextBox;
-        private TextBox KeyCountTextBox;
+        private TextBox ButtonCountTextBox;
+        private TextBox MousePriceTextBox;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private GroupBox groupBox3;
         private TextBox KeyboardTypeTextBox;
+        private TextBox KeyCountTextBox;
+        private TextBox KeyboardPriceTextBox;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private GroupBox groupBox2;
         private TextBox MonitorPriceTextBox;
         private TextBox ResolutionTextBox;
         private TextBox ScreenSizeTextBox;
-        private TextBox SystemBlockPriceTextBox;
-        private TextBox HardDriveCapacityTextBox;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Button ShowComputerPriceButton;
+        private DataGridView computerDataGridView;
         private Button ClearListButton;
         private Button TotalPriceButton;
         private Button AddComputerButton;
-        private Label label14;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
+        private GroupBox groupBox1;
+        private CheckBox HasCdDriveCheckBox;
         private Label label5;
         private Label label4;
         private Label label2;
         private Label label1;
-        private CheckBox HasCdDriveCheckBox;
-        private DataGridView computerDataGridView;
-        private Button button1;
-        private GroupBox groupBox4;
-        private GroupBox groupBox3;
-        private GroupBox groupBox2;
-        private GroupBox groupBox5;
-        private CheckBox checkBox1;
-        private Label label3;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private GroupBox groupBox8;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private Label label24;
-        private Label label25;
-        private Label label26;
-        private GroupBox groupBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private Label label21;
-        private Label label22;
-        private Label label23;
-        private GroupBox groupBox6;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private Label label18;
-        private Label label19;
-        private Label label20;
+        private TextBox ProcessorTypeTextBox;
+        private TextBox ClockSpeedTextBox;
+        private TextBox SystemBlockPriceTextBox;
+        private TextBox HardDriveCapacityTextBox;
+        private Button SerializeButton;
+        private Button DeserialzeButton;
     }
 }
