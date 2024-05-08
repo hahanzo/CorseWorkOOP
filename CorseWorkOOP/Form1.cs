@@ -35,113 +35,73 @@ namespace CorseWorkOOP
             // Checks for text values
             if (string.IsNullOrWhiteSpace(ProcessorTypeTextBox.Text))
             {
-                MessageBox.Show("Будь ласка, введіть тип процесора.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(ClockSpeedTextBox.Text))
-            {
-                MessageBox.Show("Будь ласка, введіть тактову частоту процесора.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(HardDriveCapacityTextBox.Text))
-            {
-                MessageBox.Show("Будь ласка, введіть об'єм жорсткого диска.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Будь ласка, введіть тип процесора.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(ResolutionTextBox.Text))
             {
-                MessageBox.Show("Будь ласка, введіть роздільну здатність екрану.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Будь ласка, введіть роздільну здатність екрану.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Checks for numerical values
             double screenSize, systemBlockPrice, monitorPrice, keyboardPrice, mousePrice;
-            int keyCount, buttonCount;
+            int clockSpeed, hardDriveCapacity, keyCount, buttonCount;
 
-            if (!double.TryParse(ScreenSizeTextBox.Text, out screenSize) || screenSize <= 0)
+            if (!int.TryParse(ClockSpeedTextBox.Text, out clockSpeed) || clockSpeed <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректний розмір екрану.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) тактову частоту процесора.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (screenSize < 0)
+            if (!int.TryParse(HardDriveCapacityTextBox.Text, out hardDriveCapacity) || hardDriveCapacity <= 0)
             {
-                MessageBox.Show("Розмір екрану не може бути від'ємним.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректний (додатне число) об'єм жорсткого диска.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!double.TryParse(ScreenSizeTextBox.Text, out screenSize) || screenSize <= 0)
+            {
+                MessageBox.Show("Будь ласка, введіть коректний (додатне число) розмір екрану.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!double.TryParse(SystemBlockPriceTextBox.Text, out systemBlockPrice) || systemBlockPrice <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну ціну системного блоку.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) ціну системного блоку.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (systemBlockPrice < 0)
-            {
-                MessageBox.Show("Ціна системного блоку не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (!double.TryParse(MonitorPriceTextBox.Text, out monitorPrice) || monitorPrice <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну ціну монітора.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) ціну монітора.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (monitorPrice < 0)
-            {
-                MessageBox.Show("Ціна монітора не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             if (!int.TryParse(KeyCountTextBox.Text, out keyCount) || keyCount <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну кількість клавіш.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (keyCount < 0)
-            {
-                MessageBox.Show("Кількість клавіш не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) кількість клавіш.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!double.TryParse(KeyboardPriceTextBox.Text, out keyboardPrice) || keyboardPrice <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну ціну клавіатури.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (keyboardPrice < 0)
-            {
-                MessageBox.Show("Ціна клавіатури не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) ціну клавіатури.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!int.TryParse(ButtonCountTextBox.Text, out buttonCount) || buttonCount <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну кількість кнопок миші.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (buttonCount < 0)
-            {
-                MessageBox.Show("Кількість кнопок миші не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) кількість кнопок миші.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (!double.TryParse(MousePriceTextBox.Text, out mousePrice) || mousePrice <= 0)
             {
-                MessageBox.Show("Будь ласка, введіть коректну ціну миші.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (mousePrice < 0)
-            {
-                MessageBox.Show("Ціна миші не може бути від'ємною.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Будь ласка, введіть коректну (додатне число) ціну миші.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
