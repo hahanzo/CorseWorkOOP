@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorseWorkOOP
 {
+    [Serializable]
     internal class Keyboard
     {
         private string keyboardType;
@@ -17,13 +18,6 @@ namespace CorseWorkOOP
             keyboardType = "Unknown";
             keyCount = 0;
             price = 0;
-        }
-
-        public Keyboard(string type, int count, double cost)
-        {
-            KeyboardType = type;
-            KeyCount = count;
-            Price = cost;
         }
 
         public string KeyboardType

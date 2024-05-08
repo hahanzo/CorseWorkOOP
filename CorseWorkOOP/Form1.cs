@@ -1,3 +1,8 @@
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
+
 namespace CorseWorkOOP
 {
     public partial class Form1 : Form
@@ -8,7 +13,7 @@ namespace CorseWorkOOP
         {
             InitializeComponent();
             InitializeDataGridView();
-            
+
             computerClassroom = new ComputerClassroom();
 
             ProcessorTypeTextBox.Text = " Intel Core i5-9400F";
@@ -28,6 +33,51 @@ namespace CorseWorkOOP
             MouseTypeTextBox.Text = "Оптична";
             ButtonCountTextBox.Text = "4";
             MousePriceTextBox.Text = "1000";
+        }
+
+        // Add columns to the DataGridView
+        private void InitializeDataGridView()
+        {
+            computerDataGridView.Columns.Add("ProcessorTypeColumn", "Processor Type");
+            computerDataGridView.Columns.Add("ClockSpeedColumn", "Clock Speed");
+            computerDataGridView.Columns.Add("HardDriveCapacityColumn", "Hard Drive Capacity");
+            computerDataGridView.Columns.Add("HasCdDriveColumn", "Has CD Drive");
+            computerDataGridView.Columns.Add("SystemBlockPriceColumn", "System Block Price");
+            computerDataGridView.Columns.Add("ScreenSizeColumn", "Screen Size");
+            computerDataGridView.Columns.Add("ResolutionColumn", "Resolution");
+            computerDataGridView.Columns.Add("MonitorPriceColumn", "Monitor Price");
+            computerDataGridView.Columns.Add("KeyboardTypeColumn", "Keyboard Type");
+            computerDataGridView.Columns.Add("KeyCountColumn", "Key Count");
+            computerDataGridView.Columns.Add("KeyboardPriceColumn", "Keyboard Price");
+            computerDataGridView.Columns.Add("MouseTypeColumn", "Mouse Type");
+            computerDataGridView.Columns.Add("ButtonCountColumn", "Button Count");
+            computerDataGridView.Columns.Add("MousePriceColumn", "Mouse Price");
+        }
+
+        // Update the list of computers on the form
+        private void UpdateComputerList()
+        {
+            computerDataGridView.Rows.Clear();
+
+            foreach (var computer in computerClassroom)
+            {
+                int rowIndex = computerDataGridView.Rows.Add(
+                    computer.SystemBlock.ProcessorType,
+                    computer.SystemBlock.ClockSpeed,
+                    computer.SystemBlock.HardDriveCapacity,
+                    computer.SystemBlock.HasCdDrive ? "Yes" : "No",
+                    computer.SystemBlock.Price,
+                    computer.Monitor.ScreenSize,
+                    computer.Monitor.Resolution,
+                    computer.Monitor.Price,
+                    computer.Keyboard.KeyboardType,
+                    computer.Keyboard.KeyCount,
+                    computer.Keyboard.Price,
+                    computer.Mouse.MouseType,
+                    computer.Mouse.ButtonsCount,
+                    computer.Mouse.Price
+                );
+            }
         }
 
         private void AddComputerButton_Click(object sender, EventArgs e)
@@ -73,13 +123,11 @@ namespace CorseWorkOOP
                 return;
             }
 
-
             if (!double.TryParse(MonitorPriceTextBox.Text, out monitorPrice) || monitorPrice <= 0)
             {
                 MessageBox.Show("Будь ласка, введіть коректну (додатне число) ціну монітора.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
 
             if (!int.TryParse(KeyCountTextBox.Text, out keyCount) || keyCount <= 0)
             {
@@ -131,7 +179,7 @@ namespace CorseWorkOOP
                 Mouse = new Mouse
                 {
                     MouseType = MouseTypeTextBox.Text,
-                    ButtonCount = Convert.ToInt32(ButtonCountTextBox.Text),
+                    ButtonsCount = Convert.ToInt32(ButtonCountTextBox.Text),
                     Price = Convert.ToDouble(MousePriceTextBox.Text)
                 }
             };
@@ -146,30 +194,22 @@ namespace CorseWorkOOP
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
             // Check if there is at least one row in DataGridView
-            if (computerDataGridView.RowCount > 0)
+            if (computerDataGridView.RowCount > 1)
             {
                 // Get the current row where the focus is
-                int rowIndex = computerDataGridView.CurrentCell?.RowIndex ?? -1;
+                int rowIndex = computerDataGridView.CurrentCell.RowIndex;
 
-                // Check if the focus is on a correct row
-                if (rowIndex >= 0)
+                // Get the Computer object from the list at the specified index
+                Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
+
+                // Check if successfully retrieved a Computer object
+                if (selectedComputer != null)
                 {
-                    // Get the Computer object from the list at the specified index
-                    Computer selectedComputer = computerClassroom.ElementAtOrDefault(rowIndex);
-
-                    // Check if successfully retrieved a Computer object
-                    if (selectedComputer != null)
-                    {
-                        MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show($"Ціна комп'ютера: {selectedComputer.ComputerPrice}", "Ціна комп'ютера", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Неможливо визначити обраний рядок.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Неможливо визначити ціну комп'ютера для обраної клітинки.", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -178,12 +218,10 @@ namespace CorseWorkOOP
             }
         }
 
-
         private void TotalPriceButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Total Price: ${computerClassroom.CalculateTotalPrice()}", "Total Price", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
 
         private void ClearListButton_Click(object sender, EventArgs e)
         {
@@ -191,49 +229,65 @@ namespace CorseWorkOOP
             UpdateComputerList();
         }
 
-        // Add columns to the DataGridView
-        private void InitializeDataGridView()
+        private void SerializeButton_Click(object sender, EventArgs e)
         {
-            computerDataGridView.Columns.Add("ProcessorTypeColumn", "Processor Type");
-            computerDataGridView.Columns.Add("ClockSpeedColumn", "Clock Speed");
-            computerDataGridView.Columns.Add("HardDriveCapacityColumn", "Hard Drive Capacity");
-            computerDataGridView.Columns.Add("HasCdDriveColumn", "Has CD Drive");
-            computerDataGridView.Columns.Add("SystemBlockPriceColumn", "System Block Price");
-            computerDataGridView.Columns.Add("ScreenSizeColumn", "Screen Size");
-            computerDataGridView.Columns.Add("ResolutionColumn", "Resolution");
-            computerDataGridView.Columns.Add("MonitorPriceColumn", "Monitor Price");
-            computerDataGridView.Columns.Add("KeyboardTypeColumn", "Keyboard Type");
-            computerDataGridView.Columns.Add("KeyCountColumn", "Key Count");
-            computerDataGridView.Columns.Add("KeyboardPriceColumn", "Keyboard Price");
-            computerDataGridView.Columns.Add("MouseTypeColumn", "Mouse Type");
-            computerDataGridView.Columns.Add("ButtonCountColumn", "Button Count");
-            computerDataGridView.Columns.Add("MousePriceColumn", "Mouse Price");
+            saveFileDialog1.Filter = "Binary files (*.bin)|*.bin|JSON files (*.json)|*.json|All files (*.*)|*.*";
+            saveFileDialog1.RestoreDirectory = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog1.FileName;
+
+                string fileExtension = Path.GetExtension(saveFileDialog1.FileName);
+
+                try
+                {
+                    if (fileExtension.Equals(".bin", StringComparison.OrdinalIgnoreCase))
+                        computerClassroom.SaveToBinaryFile(filePath);
+                    else
+                        computerClassroom.SaveToJsonFile(filePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка при зберіганні колекції: {ex.Message}");
+                }
+            }
         }
 
-        // Update the list of computers on the form
-        private void UpdateComputerList()
+        private void DeserialzeButton_Click(object sender, EventArgs e)
         {
-            computerDataGridView.Rows.Clear();
+            openFileDialog1.Filter = "Binary files (*.bin)|*.bin|JSON files (*.json)|*.json|All files (*.*)|*.*";
+            openFileDialog1.RestoreDirectory = true;
+            ComputerClassroom deserializeComp = new ComputerClassroom();
 
-            foreach (var computer in computerClassroom)
+            if (openFileDialog1.ShowDialog()== DialogResult.OK)
             {
-                int rowIndex = computerDataGridView.Rows.Add(
-                    computer.SystemBlock.ProcessorType,
-                    computer.SystemBlock.ClockSpeed,
-                    computer.SystemBlock.HardDriveCapacity,
-                    computer.SystemBlock.HasCdDrive ? "Yes" : "No",
-                    computer.SystemBlock.Price,
-                    computer.Monitor.ScreenSize,
-                    computer.Monitor.Resolution,
-                    computer.Monitor.Price,
-                    computer.Keyboard.KeyboardType,
-                    computer.Keyboard.KeyCount,
-                    computer.Keyboard.Price,
-                    computer.Mouse.MouseType,
-                    computer.Mouse.ButtonCount,
-                    computer.Mouse.Price
-                );
+                string selectedFileName = openFileDialog1.FileName;
+
+                string fileExtension = Path.GetExtension(selectedFileName);
+                try
+                {
+                    if (fileExtension.Equals(".bin", StringComparison.OrdinalIgnoreCase))
+                    {
+                        deserializeComp.LoadFromBinaryFile(selectedFileName);
+                    }
+                    else if (fileExtension.Equals(".json", StringComparison.OrdinalIgnoreCase))
+                    {
+                        deserializeComp.LoadFromJsonFile(selectedFileName);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не пітримуємий формат файлу.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Помилка загрузки колекції: {ex.Message}");
+                }
+
+                computerClassroom.AddRange(deserializeComp);
             }
+
+            UpdateComputerList();
         }
     }
 }

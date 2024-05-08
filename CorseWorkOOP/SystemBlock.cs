@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorseWorkOOP
 {
+    [Serializable]
     internal class SystemBlock
     {
         private string processorType;
@@ -21,15 +22,6 @@ namespace CorseWorkOOP
             hardDriveCapacity = 0;
             hasCdDrive = false;
             price = 0;
-        }
-
-        public SystemBlock(string processor, int speed, int capacity, bool hasCd, double cost)
-        {
-            ProcessorType = processor;
-            ClockSpeed = speed;
-            HardDriveCapacity = capacity;
-            HasCdDrive = hasCd;
-            Price = cost;
         }
 
         public string ProcessorType

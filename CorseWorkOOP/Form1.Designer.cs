@@ -66,6 +66,8 @@
             HardDriveCapacityTextBox = new TextBox();
             SerializeButton = new Button();
             DeserialzeButton = new Button();
+            saveFileDialog1 = new SaveFileDialog();
+            openFileDialog1 = new OpenFileDialog();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -412,6 +414,7 @@
             SerializeButton.TabIndex = 39;
             SerializeButton.Text = "Зберегти";
             SerializeButton.UseVisualStyleBackColor = true;
+            SerializeButton.Click += SerializeButton_Click;
             // 
             // DeserialzeButton
             // 
@@ -421,6 +424,11 @@
             DeserialzeButton.TabIndex = 40;
             DeserialzeButton.Text = "Завантажити";
             DeserialzeButton.UseVisualStyleBackColor = true;
+            DeserialzeButton.Click += DeserialzeButton_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -494,5 +502,7 @@
         private TextBox HardDriveCapacityTextBox;
         private Button SerializeButton;
         private Button DeserialzeButton;
+        private SaveFileDialog saveFileDialog1;
+        private OpenFileDialog openFileDialog1;
     }
 }

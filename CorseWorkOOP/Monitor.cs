@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorseWorkOOP
 {
+    [Serializable]
     internal class Monitor
     {
         private double screenSize;
@@ -17,13 +18,6 @@ namespace CorseWorkOOP
             screenSize = 0;
             resolution = "Unknown";
             price = 0;
-        }
-
-        public Monitor(double size, string res, double cost)
-        {
-            ScreenSize = size;
-            Resolution = res;
-            Price = cost;
         }
 
         public double ScreenSize
