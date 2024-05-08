@@ -68,6 +68,7 @@
             DeserialzeButton = new Button();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
+            DeleteComputerButton = new Button();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -266,7 +267,7 @@
             // 
             // ShowComputerPriceButton
             // 
-            ShowComputerPriceButton.Location = new Point(585, 640);
+            ShowComputerPriceButton.Location = new Point(750, 639);
             ShowComputerPriceButton.Name = "ShowComputerPriceButton";
             ShowComputerPriceButton.Size = new Size(159, 49);
             ShowComputerPriceButton.TabIndex = 35;
@@ -281,12 +282,12 @@
             computerDataGridView.Location = new Point(420, 40);
             computerDataGridView.Name = "computerDataGridView";
             computerDataGridView.RowTemplate.Height = 25;
-            computerDataGridView.Size = new Size(984, 593);
+            computerDataGridView.Size = new Size(1149, 593);
             computerDataGridView.TabIndex = 34;
             // 
             // ClearListButton
             // 
-            ClearListButton.Location = new Point(915, 640);
+            ClearListButton.Location = new Point(1080, 639);
             ClearListButton.Name = "ClearListButton";
             ClearListButton.Size = new Size(159, 49);
             ClearListButton.TabIndex = 33;
@@ -296,7 +297,7 @@
             // 
             // TotalPriceButton
             // 
-            TotalPriceButton.Location = new Point(750, 640);
+            TotalPriceButton.Location = new Point(915, 639);
             TotalPriceButton.Name = "TotalPriceButton";
             TotalPriceButton.Size = new Size(159, 49);
             TotalPriceButton.TabIndex = 32;
@@ -408,7 +409,7 @@
             // 
             // SerializeButton
             // 
-            SerializeButton.Location = new Point(1080, 640);
+            SerializeButton.Location = new Point(1245, 639);
             SerializeButton.Name = "SerializeButton";
             SerializeButton.Size = new Size(159, 49);
             SerializeButton.TabIndex = 39;
@@ -418,7 +419,7 @@
             // 
             // DeserialzeButton
             // 
-            DeserialzeButton.Location = new Point(1245, 640);
+            DeserialzeButton.Location = new Point(1410, 639);
             DeserialzeButton.Name = "DeserialzeButton";
             DeserialzeButton.Size = new Size(159, 49);
             DeserialzeButton.TabIndex = 40;
@@ -430,12 +431,23 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // DeleteComputerButton
+            // 
+            DeleteComputerButton.Location = new Point(585, 640);
+            DeleteComputerButton.Name = "DeleteComputerButton";
+            DeleteComputerButton.Size = new Size(159, 49);
+            DeleteComputerButton.TabIndex = 41;
+            DeleteComputerButton.Text = "Видалити компютер";
+            DeleteComputerButton.UseVisualStyleBackColor = true;
+            DeleteComputerButton.Click += DeleteComputerButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1418, 728);
+            ClientSize = new Size(1615, 728);
+            Controls.Add(DeleteComputerButton);
             Controls.Add(DeserialzeButton);
             Controls.Add(SerializeButton);
             Controls.Add(groupBox4);
@@ -504,5 +516,6 @@
         private Button DeserialzeButton;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
+        private Button DeleteComputerButton;
     }
 }

@@ -39,6 +39,14 @@ namespace CorseWorkOOP
             computers.AddRange(enumerator);
         }
 
+        public void RomoveByIndex(int index)
+        {
+            if (index >= 0 && index < computers.Count)
+            {
+                computers.RemoveAt(index);
+            }
+        }
+
         public double CalculateTotalPrice()
         {
             double totalPrice = 0;

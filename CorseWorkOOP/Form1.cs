@@ -191,6 +191,22 @@ namespace CorseWorkOOP
             UpdateComputerList();
         }
 
+        private void DeleteComputerButton_Click(object sender, EventArgs e)
+        {
+            if (computerDataGridView.SelectedCells.Count > 0)
+            {
+                int rowIndex = computerDataGridView.SelectedCells[0].RowIndex;
+
+                computerClassroom.RomoveByIndex(rowIndex);
+
+                UpdateComputerList();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
             // Check if there is at least one row in DataGridView
@@ -259,7 +275,7 @@ namespace CorseWorkOOP
             openFileDialog1.RestoreDirectory = true;
             ComputerClassroom deserializeComp = new ComputerClassroom();
 
-            if (openFileDialog1.ShowDialog()== DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string selectedFileName = openFileDialog1.FileName;
 
