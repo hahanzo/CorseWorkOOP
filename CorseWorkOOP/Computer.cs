@@ -35,6 +35,8 @@ namespace CorseWorkOOP
             Mouse = mouse;
         }
 
+        ~Computer() { }
+
         public SystemBlock SystemBlock
         {
             get => systemBlock;

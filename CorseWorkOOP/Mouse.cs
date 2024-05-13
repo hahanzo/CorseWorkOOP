@@ -20,6 +20,15 @@ namespace CorseWorkOOP
             price = 0;
         }
 
+        public Mouse(string type, int count, double cost)
+        {
+            MouseType = type;
+            ButtonsCount = count;
+            Price = cost;
+        }
+
+        ~Mouse() { }
+
         public string MouseType
         {
             get => mouseType;
