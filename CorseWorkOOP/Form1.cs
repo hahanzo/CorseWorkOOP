@@ -38,20 +38,10 @@ namespace CorseWorkOOP
         // Add columns to the DataGridView
         private void InitializeDataGridView()
         {
-            computerDataGridView.Columns.Add("ProcessorTypeColumn", "Processor Type");
-            computerDataGridView.Columns.Add("ClockSpeedColumn", "Clock Speed");
-            computerDataGridView.Columns.Add("HardDriveCapacityColumn", "Hard Drive Capacity");
-            computerDataGridView.Columns.Add("HasCdDriveColumn", "Has CD Drive");
-            computerDataGridView.Columns.Add("SystemBlockPriceColumn", "System Block Price");
-            computerDataGridView.Columns.Add("ScreenSizeColumn", "Screen Size");
-            computerDataGridView.Columns.Add("ResolutionColumn", "Resolution");
-            computerDataGridView.Columns.Add("MonitorPriceColumn", "Monitor Price");
-            computerDataGridView.Columns.Add("KeyboardTypeColumn", "Keyboard Type");
-            computerDataGridView.Columns.Add("KeyCountColumn", "Key Count");
-            computerDataGridView.Columns.Add("KeyboardPriceColumn", "Keyboard Price");
-            computerDataGridView.Columns.Add("MouseTypeColumn", "Mouse Type");
-            computerDataGridView.Columns.Add("ButtonCountColumn", "Button Count");
-            computerDataGridView.Columns.Add("MousePriceColumn", "Mouse Price");
+            computerDataGridView.Columns.Add("System Block", "Системний блок");
+            computerDataGridView.Columns.Add("Monitor", "Монітор");
+            computerDataGridView.Columns.Add("Kyeboard", "Клавіатура");
+            computerDataGridView.Columns.Add("Mouse", "Миша");
         }
 
         // Update the list of computers on the form
@@ -61,20 +51,20 @@ namespace CorseWorkOOP
 
             foreach (var computer in computerClassroom)
             {
-                int rowIndex = computerDataGridView.Rows.Add(
-                    computer.SystemBlock.ProcessorType,
-                    computer.SystemBlock.ClockSpeed,
-                    computer.SystemBlock.HardDriveCapacity,
-                    computer.SystemBlock.HasCdDrive ? "Yes" : "No",
+                    computerDataGridView.Rows.Add(
+                    computer.SystemBlock.ProcessorType + "," +
+                    computer.SystemBlock.ClockSpeed + "," +
+                    computer.SystemBlock.HardDriveCapacity + "," +
+                    (computer.SystemBlock.HasCdDrive ? "Yes" : "No") + ",$" +
                     computer.SystemBlock.Price,
-                    computer.Monitor.ScreenSize,
-                    computer.Monitor.Resolution,
+                    computer.Monitor.ScreenSize + "," +
+                    computer.Monitor.Resolution + ",$" +
                     computer.Monitor.Price,
-                    computer.Keyboard.KeyboardType,
-                    computer.Keyboard.KeyCount,
+                    computer.Keyboard.KeyboardType + "," +
+                    computer.Keyboard.KeyCount + ",$" +
                     computer.Keyboard.Price,
-                    computer.Mouse.MouseType,
-                    computer.Mouse.ButtonsCount,
+                    computer.Mouse.MouseType + "," +
+                    computer.Mouse.ButtonsCount + ",$" +
                     computer.Mouse.Price
                 );
             }

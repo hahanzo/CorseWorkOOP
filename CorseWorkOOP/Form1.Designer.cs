@@ -69,11 +69,13 @@
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
             DeleteComputerButton = new Button();
+            groupBox5 = new GroupBox();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox4
@@ -84,7 +86,7 @@
             groupBox4.Controls.Add(label12);
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(label14);
-            groupBox4.Location = new Point(34, 552);
+            groupBox4.Location = new Point(15, 524);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(334, 137);
             groupBox4.TabIndex = 38;
@@ -147,7 +149,7 @@
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label11);
-            groupBox3.Location = new Point(34, 409);
+            groupBox3.Location = new Point(15, 381);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(334, 137);
             groupBox3.TabIndex = 37;
@@ -210,7 +212,7 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(34, 272);
+            groupBox2.Location = new Point(15, 244);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(334, 131);
             groupBox2.TabIndex = 36;
@@ -267,7 +269,7 @@
             // 
             // ShowComputerPriceButton
             // 
-            ShowComputerPriceButton.Location = new Point(750, 639);
+            ShowComputerPriceButton.Location = new Point(731, 611);
             ShowComputerPriceButton.Name = "ShowComputerPriceButton";
             ShowComputerPriceButton.Size = new Size(159, 49);
             ShowComputerPriceButton.TabIndex = 35;
@@ -278,16 +280,17 @@
             // computerDataGridView
             // 
             computerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            computerDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             computerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            computerDataGridView.Location = new Point(420, 40);
+            computerDataGridView.Location = new Point(6, 22);
             computerDataGridView.Name = "computerDataGridView";
             computerDataGridView.RowTemplate.Height = 25;
-            computerDataGridView.Size = new Size(1149, 593);
+            computerDataGridView.Size = new Size(1137, 564);
             computerDataGridView.TabIndex = 34;
             // 
             // ClearListButton
             // 
-            ClearListButton.Location = new Point(1080, 639);
+            ClearListButton.Location = new Point(1061, 611);
             ClearListButton.Name = "ClearListButton";
             ClearListButton.Size = new Size(159, 49);
             ClearListButton.TabIndex = 33;
@@ -297,7 +300,7 @@
             // 
             // TotalPriceButton
             // 
-            TotalPriceButton.Location = new Point(915, 639);
+            TotalPriceButton.Location = new Point(896, 611);
             TotalPriceButton.Name = "TotalPriceButton";
             TotalPriceButton.Size = new Size(159, 49);
             TotalPriceButton.TabIndex = 32;
@@ -307,7 +310,7 @@
             // 
             // AddComputerButton
             // 
-            AddComputerButton.Location = new Point(420, 640);
+            AddComputerButton.Location = new Point(401, 612);
             AddComputerButton.Name = "AddComputerButton";
             AddComputerButton.Size = new Size(159, 49);
             AddComputerButton.TabIndex = 31;
@@ -326,7 +329,7 @@
             groupBox1.Controls.Add(ClockSpeedTextBox);
             groupBox1.Controls.Add(SystemBlockPriceTextBox);
             groupBox1.Controls.Add(HardDriveCapacityTextBox);
-            groupBox1.Location = new Point(34, 40);
+            groupBox1.Location = new Point(15, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(334, 226);
             groupBox1.TabIndex = 30;
@@ -409,7 +412,7 @@
             // 
             // SerializeButton
             // 
-            SerializeButton.Location = new Point(1245, 639);
+            SerializeButton.Location = new Point(1226, 611);
             SerializeButton.Name = "SerializeButton";
             SerializeButton.Size = new Size(159, 49);
             SerializeButton.TabIndex = 39;
@@ -419,7 +422,7 @@
             // 
             // DeserialzeButton
             // 
-            DeserialzeButton.Location = new Point(1410, 639);
+            DeserialzeButton.Location = new Point(1391, 611);
             DeserialzeButton.Name = "DeserialzeButton";
             DeserialzeButton.Size = new Size(159, 49);
             DeserialzeButton.TabIndex = 40;
@@ -433,7 +436,7 @@
             // 
             // DeleteComputerButton
             // 
-            DeleteComputerButton.Location = new Point(585, 640);
+            DeleteComputerButton.Location = new Point(566, 612);
             DeleteComputerButton.Name = "DeleteComputerButton";
             DeleteComputerButton.Size = new Size(159, 49);
             DeleteComputerButton.TabIndex = 41;
@@ -441,12 +444,23 @@
             DeleteComputerButton.UseVisualStyleBackColor = true;
             DeleteComputerButton.Click += DeleteComputerButton_Click;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(computerDataGridView);
+            groupBox5.Location = new Point(401, 12);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(1149, 592);
+            groupBox5.TabIndex = 42;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Комп'ютерний клас";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1615, 728);
+            ClientSize = new Size(1570, 678);
+            Controls.Add(groupBox5);
             Controls.Add(DeleteComputerButton);
             Controls.Add(DeserialzeButton);
             Controls.Add(SerializeButton);
@@ -454,13 +468,12 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(ShowComputerPriceButton);
-            Controls.Add(computerDataGridView);
             Controls.Add(ClearListButton);
             Controls.Add(TotalPriceButton);
             Controls.Add(AddComputerButton);
             Controls.Add(groupBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Комп'ютерний клас";
             WindowState = FormWindowState.Maximized;
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
@@ -471,6 +484,7 @@
             ((System.ComponentModel.ISupportInitialize)computerDataGridView).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -517,5 +531,6 @@
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
         private Button DeleteComputerButton;
+        private GroupBox groupBox5;
     }
 }
