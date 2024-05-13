@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CorseWorkOOP
 {
@@ -29,6 +34,19 @@ namespace CorseWorkOOP
             computers.Add(computer);
         }
 
+        public void AddRange(IEnumerable<Computer> enumerator)
+        {
+            computers.AddRange(enumerator);
+        }
+
+        public void RomoveByIndex(int index)
+        {
+            if (index >= 0 && index < computers.Count)
+            {
+                computers.RemoveAt(index);
+            }
+        }
+
         public double CalculateTotalPrice()
         {
             double totalPrice = 0;
@@ -37,6 +55,64 @@ namespace CorseWorkOOP
                 totalPrice += computer.ComputerPrice;
             }
             return totalPrice;
+        }
+
+        public void SaveToBinaryFile(string filePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    binaryFormatter.Serialize(fs, computers);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error saving to binary file: {ex.Message}");
+            }
+        }
+
+        public void SaveToJsonFile(string filePath)
+        {
+            try
+            {
+                string jsonString = JsonSerializer.Serialize(computers);
+                File.WriteAllText(filePath, jsonString);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error saving to JSON file: {ex.Message}");
+            }
+        }
+
+        public void LoadFromBinaryFile(string filePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Open))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    computers = (List<Computer>)formatter.Deserialize(fs);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error loading from binary file: {ex.Message}");
+            }
+        }
+
+        public void LoadFromJsonFile(string filePath)
+        {
+            try
+            {
+                string jsonString = File.ReadAllText(filePath);
+                computers = JsonSerializer.Deserialize<List<Computer>>(jsonString);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error loading from JSON file: {ex.Message}");
+            }
         }
 
         public IEnumerator<Computer> GetEnumerator()

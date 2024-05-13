@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace CorseWorkOOP
 {
+    [Serializable]
     internal class Mouse
     {
         private string mouseType;
-        private int buttonCount;
+        private int buttonsCount;
         private double price;
 
         public Mouse()
         {
             mouseType = "Unknown";
-            buttonCount = 0;
+            buttonsCount = 0;
             price = 0;
         }
 
@@ -25,10 +26,10 @@ namespace CorseWorkOOP
             set => mouseType = value;
         }
 
-        public int ButtonCount
+        public int ButtonsCount
         {
-            get => buttonCount;
-            set => buttonCount = value;
+            get => buttonsCount;
+            set => buttonsCount = value;
         }
 
         public double Price

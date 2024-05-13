@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorseWorkOOP
 {
+    [Serializable]
     internal class Monitor
     {
         private double screenSize;
