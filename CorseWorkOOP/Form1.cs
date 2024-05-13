@@ -146,7 +146,7 @@ namespace CorseWorkOOP
         private void ShowComputerPriceButton_Click(object sender, EventArgs e)
         {
             // Check if there is at least one row in DataGridView
-            if (computerDataGridView.RowCount > 0)
+            if (computerDataGridView.RowCount > 1)
             {
                 // Get the current row where the focus is
                 int rowIndex = computerDataGridView.CurrentCell?.RowIndex ?? -1;

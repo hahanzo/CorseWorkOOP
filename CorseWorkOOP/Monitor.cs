@@ -19,13 +19,6 @@ namespace CorseWorkOOP
             price = 0;
         }
 
-        public Monitor(double size, string res, double cost)
-        {
-            ScreenSize = size;
-            Resolution = res;
-            Price = cost;
-        }
-
         public double ScreenSize
         {
             get => screenSize;
