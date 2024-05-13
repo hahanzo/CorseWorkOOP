@@ -27,6 +27,14 @@ namespace CorseWorkOOP
             mouse = new Mouse();
         }
 
+        public Computer(SystemBlock systemBlock, Monitor monitor, Keyboard keyboard, Mouse mouse)
+        {
+            SystemBlock = systemBlock;
+            Monitor = monitor;
+            Keyboard = keyboard;
+            Mouse = mouse;
+        }
+
         public SystemBlock SystemBlock
         {
             get => systemBlock;

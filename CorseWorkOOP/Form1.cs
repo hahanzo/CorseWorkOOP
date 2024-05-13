@@ -143,36 +143,39 @@ namespace CorseWorkOOP
                 return;
             }
 
-            // Create a computer object with the entered data
-            Computer computer = new Computer()
+            // Create separate objects for each component
+            SystemBlock systemBlock = new SystemBlock
             {
-                SystemBlock = new SystemBlock
-                {
-                    ProcessorType = ProcessorTypeTextBox.Text,
-                    ClockSpeed = Convert.ToInt32(ClockSpeedTextBox.Text),
-                    HardDriveCapacity = Convert.ToInt32(HardDriveCapacityTextBox.Text),
-                    HasCdDrive = HasCdDriveCheckBox.Checked,
-                    Price = Convert.ToDouble(SystemBlockPriceTextBox.Text)
-                },
-                Monitor = new Monitor
-                {
-                    ScreenSize = Convert.ToDouble(ScreenSizeTextBox.Text),
-                    Resolution = ResolutionTextBox.Text,
-                    Price = Convert.ToDouble(MonitorPriceTextBox.Text)
-                },
-                Keyboard = new Keyboard
-                {
-                    KeyboardType = KeyboardTypeTextBox.Text,
-                    KeyCount = Convert.ToInt32(KeyCountTextBox.Text),
-                    Price = Convert.ToDouble(KeyboardPriceTextBox.Text)
-                },
-                Mouse = new Mouse
-                {
-                    MouseType = MouseTypeTextBox.Text,
-                    ButtonsCount = Convert.ToInt32(ButtonCountTextBox.Text),
-                    Price = Convert.ToDouble(MousePriceTextBox.Text)
-                }
+                ProcessorType = ProcessorTypeTextBox.Text,
+                ClockSpeed = Convert.ToInt32(ClockSpeedTextBox.Text),
+                HardDriveCapacity = Convert.ToInt32(HardDriveCapacityTextBox.Text),
+                HasCdDrive = HasCdDriveCheckBox.Checked,
+                Price = Convert.ToDouble(SystemBlockPriceTextBox.Text)
             };
+
+            Monitor monitor = new Monitor
+            {
+                ScreenSize = Convert.ToDouble(ScreenSizeTextBox.Text),
+                Resolution = ResolutionTextBox.Text,
+                Price = Convert.ToDouble(MonitorPriceTextBox.Text)
+            };
+
+            Keyboard keyboard = new Keyboard
+            {
+                KeyboardType = KeyboardTypeTextBox.Text,
+                KeyCount = Convert.ToInt32(KeyCountTextBox.Text),
+                Price = Convert.ToDouble(KeyboardPriceTextBox.Text)
+            };
+
+            Mouse mouse = new Mouse
+            {
+                MouseType = MouseTypeTextBox.Text,
+                ButtonsCount = Convert.ToInt32(ButtonCountTextBox.Text),
+                Price = Convert.ToDouble(MousePriceTextBox.Text)
+            };
+
+            // Create a computer object using aggregation
+            Computer computer = new Computer(systemBlock, monitor, keyboard, mouse);
 
             // Add the computer to the list
             computerClassroom.AddComputer(computer);
