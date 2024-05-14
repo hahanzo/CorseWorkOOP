@@ -23,6 +23,16 @@ namespace CorseWorkOOP
             hasCdDrive = false;
             price = 0;
         }
+        public SystemBlock(string processor, int speed, int capacity, bool hasCd, double cost)
+        {
+            ProcessorType = processor;
+            ClockSpeed = speed;
+            HardDriveCapacity = capacity;
+            HasCdDrive = hasCd;
+            Price = cost;
+        }
+
+        ~SystemBlock() { }
 
         public string ProcessorType
         {

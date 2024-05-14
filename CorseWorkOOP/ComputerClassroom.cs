@@ -28,6 +28,11 @@ namespace CorseWorkOOP
             computers = new List<Computer>(count);
             this.count = count;
         }
+        
+        public List<Computer> Computers
+        {
+            get => computers;
+        }
 
         public void AddComputer(Computer computer)
         {

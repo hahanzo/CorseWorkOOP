@@ -20,6 +20,15 @@ namespace CorseWorkOOP
             price = 0;
         }
 
+        public Keyboard(string type, int count, double cost)
+        {
+            KeyboardType = type;
+            KeyCount = count;
+            Price = cost;
+        }
+
+        ~Keyboard() { }
+
         public string KeyboardType
         {
             get => keyboardType;

@@ -68,8 +68,8 @@
             DeserialzeButton = new Button();
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
-            DeleteComputerButton = new Button();
             groupBox5 = new GroupBox();
+            DeleteComputerButton = new Button();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -269,9 +269,9 @@
             // 
             // ShowComputerPriceButton
             // 
-            ShowComputerPriceButton.Location = new Point(731, 611);
+            ShowComputerPriceButton.Location = new Point(361, 603);
             ShowComputerPriceButton.Name = "ShowComputerPriceButton";
-            ShowComputerPriceButton.Size = new Size(159, 49);
+            ShowComputerPriceButton.Size = new Size(129, 49);
             ShowComputerPriceButton.TabIndex = 35;
             ShowComputerPriceButton.Text = "Ціна комп'ютера";
             ShowComputerPriceButton.UseVisualStyleBackColor = true;
@@ -279,20 +279,20 @@
             // 
             // computerDataGridView
             // 
-            computerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            computerDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             computerDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             computerDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             computerDataGridView.Location = new Point(6, 22);
             computerDataGridView.Name = "computerDataGridView";
             computerDataGridView.RowTemplate.Height = 25;
-            computerDataGridView.Size = new Size(1137, 564);
+            computerDataGridView.Size = new Size(669, 478);
             computerDataGridView.TabIndex = 34;
             // 
             // ClearListButton
             // 
-            ClearListButton.Location = new Point(1061, 611);
+            ClearListButton.Location = new Point(901, 532);
             ClearListButton.Name = "ClearListButton";
-            ClearListButton.Size = new Size(159, 49);
+            ClearListButton.Size = new Size(129, 49);
             ClearListButton.TabIndex = 33;
             ClearListButton.Text = "Очистити список";
             ClearListButton.UseVisualStyleBackColor = true;
@@ -300,9 +300,9 @@
             // 
             // TotalPriceButton
             // 
-            TotalPriceButton.Location = new Point(896, 611);
+            TotalPriceButton.Location = new Point(496, 603);
             TotalPriceButton.Name = "TotalPriceButton";
-            TotalPriceButton.Size = new Size(159, 49);
+            TotalPriceButton.Size = new Size(129, 49);
             TotalPriceButton.TabIndex = 32;
             TotalPriceButton.Text = "Загальна ціна";
             TotalPriceButton.UseVisualStyleBackColor = true;
@@ -310,9 +310,9 @@
             // 
             // AddComputerButton
             // 
-            AddComputerButton.Location = new Point(401, 612);
+            AddComputerButton.Location = new Point(361, 532);
             AddComputerButton.Name = "AddComputerButton";
-            AddComputerButton.Size = new Size(159, 49);
+            AddComputerButton.Size = new Size(129, 49);
             AddComputerButton.TabIndex = 31;
             AddComputerButton.Text = "Добавити компютер";
             AddComputerButton.UseVisualStyleBackColor = true;
@@ -412,9 +412,9 @@
             // 
             // SerializeButton
             // 
-            SerializeButton.Location = new Point(1226, 611);
+            SerializeButton.Location = new Point(631, 532);
             SerializeButton.Name = "SerializeButton";
-            SerializeButton.Size = new Size(159, 49);
+            SerializeButton.Size = new Size(129, 49);
             SerializeButton.TabIndex = 39;
             SerializeButton.Text = "Зберегти";
             SerializeButton.UseVisualStyleBackColor = true;
@@ -422,9 +422,9 @@
             // 
             // DeserialzeButton
             // 
-            DeserialzeButton.Location = new Point(1391, 611);
+            DeserialzeButton.Location = new Point(766, 532);
             DeserialzeButton.Name = "DeserialzeButton";
-            DeserialzeButton.Size = new Size(159, 49);
+            DeserialzeButton.Size = new Size(129, 49);
             DeserialzeButton.TabIndex = 40;
             DeserialzeButton.Text = "Завантажити";
             DeserialzeButton.UseVisualStyleBackColor = true;
@@ -434,47 +434,47 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // groupBox5
+            // 
+            groupBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox5.Controls.Add(computerDataGridView);
+            groupBox5.Location = new Point(355, 12);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(681, 506);
+            groupBox5.TabIndex = 42;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Комп'ютерний клас";
+            // 
             // DeleteComputerButton
             // 
-            DeleteComputerButton.Location = new Point(566, 612);
+            DeleteComputerButton.Location = new Point(496, 532);
             DeleteComputerButton.Name = "DeleteComputerButton";
-            DeleteComputerButton.Size = new Size(159, 49);
+            DeleteComputerButton.Size = new Size(129, 49);
             DeleteComputerButton.TabIndex = 41;
             DeleteComputerButton.Text = "Видалити компютер";
             DeleteComputerButton.UseVisualStyleBackColor = true;
             DeleteComputerButton.Click += DeleteComputerButton_Click;
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(computerDataGridView);
-            groupBox5.Location = new Point(401, 12);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(1149, 592);
-            groupBox5.TabIndex = 42;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Комп'ютерний клас";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1570, 678);
+            ClientSize = new Size(1047, 673);
             Controls.Add(groupBox5);
+            Controls.Add(ShowComputerPriceButton);
             Controls.Add(DeleteComputerButton);
             Controls.Add(DeserialzeButton);
             Controls.Add(SerializeButton);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
-            Controls.Add(ShowComputerPriceButton);
             Controls.Add(ClearListButton);
             Controls.Add(TotalPriceButton);
             Controls.Add(AddComputerButton);
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Комп'ютерний клас";
-            WindowState = FormWindowState.Maximized;
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -530,7 +530,7 @@
         private Button DeserialzeButton;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
-        private Button DeleteComputerButton;
         private GroupBox groupBox5;
+        private Button DeleteComputerButton;
     }
 }
