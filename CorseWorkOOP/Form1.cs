@@ -229,12 +229,12 @@ namespace CorseWorkOOP
 
         private void TotalPriceButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Total Price: ${computerClassroom.CalculateTotalPrice()}", "Total Price", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Загальна ціна: ${computerClassroom.CalculateTotalPrice()}", "Загальна ціна", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClearListButton_Click(object sender, EventArgs e)
         {
-            computerClassroom = new ComputerClassroom();
+            computerClassroom.Computers.Clear();
             UpdateComputerList();
         }
 
