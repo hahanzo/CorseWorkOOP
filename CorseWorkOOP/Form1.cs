@@ -15,24 +15,6 @@ namespace CorseWorkOOP
             InitializeDataGridView();
 
             computerClassroom = new ComputerClassroom();
-
-            ProcessorTypeTextBox.Text = " Intel Core i5-9400F";
-            ClockSpeedTextBox.Text = "2900";
-            HardDriveCapacityTextBox.Text = "500";
-            HasCdDriveCheckBox.Checked = false;
-            SystemBlockPriceTextBox.Text = "30000";
-
-            ScreenSizeTextBox.Text = "23,8";
-            ResolutionTextBox.Text = "1920x1080";
-            MonitorPriceTextBox.Text = "4000";
-
-            KeyboardTypeTextBox.Text = "Механічна";
-            KeyCountTextBox.Text = "40";
-            KeyboardPriceTextBox.Text = "2000";
-
-            MouseTypeTextBox.Text = "Оптична";
-            ButtonCountTextBox.Text = "4";
-            MousePriceTextBox.Text = "1000";
         }
 
         // Add columns to the DataGridView
